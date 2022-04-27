@@ -15,6 +15,8 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+    background-image: url('');
+    background-size: cover;
 }
 
 .instagram-wrapper {
@@ -23,26 +25,102 @@ body {
     justify-content: start;
     width: 60%;
     height: 100vh;
-}
-
-.instagram-phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
-
-.instagram-phone img {
-    height: 50rem;
+    vertical-align: baseline;
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 80px;
 }
 
 .instagram-continue {
-    display: flex;
-    align-items: center; /* horizontal */
-    justify-content: space-around; /* vertical */
+    display: flex ;
+    align-items: center; 
+    justify-content: space-around; 
     flex-direction: column;
     width: 50%;
     min-height: 34rem;
+}
+
+.form{
+    border-radius: 10px;
+    margin-top: 24px;
+    text-align: left;
+}
+
+form input{
+    background-color: rgb(247, 244, 244);
+    width: 250px;
+    padding: 25px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    outline: none;
+    font-size: 13px;
+    text-align: left;
+}
+
+.teste{
+    margin: 0 50px 6px;
+    display: flex ;
+    align-items: center; 
+    justify-content: space-around; 
+}
+
+.testeI{
+    color: #8e8e8e;
+}
+
+.label{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0;
+    -ms-flex: 1 0 0;
+    flex: 1 0 0;
+    height: 36px;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+.span {
+    color: #8e8e8e;
+    color: rgba(var(--f52,142,142,142),1);
+    font-size: 12px;
+    height: 36px;
+    left: 8px;
+    line-height: 36px;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    text-overflow: ellipsis;
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-transition: -webkit-transform ease-out .1s;
+    transition: -webkit-transform ease-out .1s;
+    transition: transform ease-out .1s;
+    transition: transform ease-out .1s,-webkit-transform ease-out .1s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.facebook {
+    color: #385185;
+    font-weight: bold; 
+}
+
+.facebookIcon {
+    background-repeat: no-repeat;
+    background-position: -414px -259px;
+    height: 16px;
+    width: 16px;
 }
 
 .group {
@@ -81,6 +159,7 @@ body {
     color: #ffffff;
     padding: 8px;
     border-radius: 4px;
+    width: 250px;
 }
 
 .instagram-logout {
@@ -90,6 +169,10 @@ body {
 
 .not-account {
     color: rgb(160, 160, 160);
+}
+
+.esqueceu-senha{
+    color: #00426e;
 }
 
 .link-blue {
