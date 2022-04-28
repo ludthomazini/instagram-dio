@@ -1,15 +1,3 @@
-/*
-
-All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 310). 
-        
-The 'supports' rule will only run if your browser supports CSS grid.
-
-Flexbox and floats are used as a fallback so that browsers which don't support grid will still recieve a similar layout.
-
-*/
-
-/* Base Styles */
-
 :root {
   font-size: 10px;
 }
@@ -63,7 +51,7 @@ img {
 /* Profile Section */
 
 .profile {
-  padding: 5rem 0;
+  padding: 5rem 0;  
 }
 
 .profile::after {
@@ -73,12 +61,13 @@ img {
 }
 
 .profile-image {
-  float: left;
   width: calc(33.333% - 1rem);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 3rem;
+  width: auto;
+  height: auto;
 }
 
 .profile-image img {

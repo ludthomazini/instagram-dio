@@ -7,63 +7,93 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../instagram-dio/img/favicon.ico">
     <title>Instagram</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
 </head>
 
-<body>
-    <div class="instagram-wrapper">
+<body ng-app="app">
+    <div id="instagram-wrapper">
         <div class="instagram-continue">
-            <div class="group">
+            <div class="header">
                 <img src="./img/instagram-logo.png" class="instagram-logo" alt="instagram logo">
-                <form class="form" action="">
-                    <div class="teste">
-                        <label class="label">
-                            <span class="span">
-                                Telefone, nome do usuário ou email
-                            </span>
-                            <input aria-label="Telefone, nome do usuário ou email" value="ludmilla.thomazini@gmail.com"> 
-                        </label>
-                    </div>
-                    <div class="teste">
-                        <label class="label">
-                            <span class="span">
-                                Senha
-                            </span>
-                            <input aria-label="Senha" value="******"> 
-                        </label>
-                    </div>
-                </form>
-                <a href="./page.html" class="instagram-login">Entrar</a>
-                <p class="testeI">______________ OU ______________</p>
-                <p>
-                    <a href="https://www.facebook.com/">
-                        <img class="facebookIcon" src="../instagram-dio/img/facebook.png" alt="Facebook">
-                        <span class="facebook">Entrar com Facebook</span>
-                    </a>
-                </p>
-                <p>
-                    <a href="https://www.instagram.com/accounts/password/reset/">
-                        <span class="esqueceu-senha">Esqueceu a senha</span>
-                    </a>
-                </p>
+            </div>
+            <form class="form" action="./page.html">
 
-            </div>
-            <div class="group">
-                <p class="not-account"> Não tem uma conta?
-                    <a href="https://www.instagram.com/accounts/emailsignup/">
-                        <span class="link-blue">Cadastre-se</span>
-                    </a>
-                </p>
-            </div>
-            <div class="get-the-app">
-                <p class="get-app">Obtenha o aplicativo.</p>
-                <div class="download">
-                    <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo" class="app-download"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D685CE364-F392-4683-A0D6-C69346BF9DF7%26utm_content%3Dlo%26utm_medium%3Dbadge"
-                        class="app-download"></a>
+                <div class="l-part" ng-controller="app" ng-init="disable=false">
+                    <input type="text" placeholder="Telefone, nome do usuário ou email" class="input-1"
+                        ng-model="checked" />
+                    <div class="overlap-text">
+                        <input id="password" type="password" placeholder="Senha" class="input-2" ng-model="checked1" />
+                        <a type="button" class="btnMostrar" onclick="mostrarSenha()" >Mostrar</a>
+                    </div>
+                    <div class="spaceBetween">
+                        <button type="submit" value="Login" class="instagram-login"
+                            ng-class="{'instagram-login-disabled': ((!checked) || (!checked1))}"
+                            ng-disabled="((!checked) || (!checked1))">Entrar</button>
+                    </div>
                 </div>
+            </form>
+
+            <div class="spaceBetween">
+                <span class="linha">___________</span>
+                <span class="linhaOu">ou</span>
+                <span class="linha">___________</span>
+            </div>
+
+
+            <div class="spaceBetween">
+                <a href="https://www.facebook.com/">
+                    <img class="facebookIcon" src="../instagram-dio/img/facebook.png" alt="Facebook">
+                    <span class="facebook">Entrar com Facebook</span>
+                </a>
+            </div>
+            <div class="esqueceu-senha">
+                <a class="esqueceu-senha" href="https://www.instagram.com/accounts/password/reset/">Esqueceu a
+                    senha?</a>
+            </div>
+
+        </div>
+
+
+        <div class="sub-content">
+            <p class="not-account"> Não tem uma conta?
+                <a href="https://www.instagram.com/accounts/emailsignup/">
+                    <span class="link-blue">Cadastre-se</span>
+                </a>
+            </p>
+        </div>
+        <div class="get-the-app">
+            <p class="get-app">Obtenha o aplicativo.</p>
+            <div class="download">
+                <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo" class="app-download"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D685CE364-F392-4683-A0D6-C69346BF9DF7%26utm_content%3Dlo%26utm_medium%3Dbadge"
+                    class="app-download"></a>
             </div>
         </div>
     </div>
+
+    <script>
+       
+        var app = angular.module("app", []);
+        app.controller('app', ['$scope', function ($app) {
+            $app.geek = function (disable) {
+                $app.disable = !disable;
+            }
+        }]);
+    </script>
+
+    <script>
+        function mostrarSenha() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+    </script>
+
 </body>
 
 </html>
